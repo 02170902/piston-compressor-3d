@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>活塞式制冷压缩机 · 三维机械实验室</title>
+<meta name="description" content="以真实金属材质与立体剖切，探索活塞式制冷压缩机的四个工作过程。">
+<meta name="theme-color" content="#101719"><link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<script type="module" src="./model.js"></script></head>
+<body id="compressor-site">
+<header class="site-header"><a class="brand" href="./"><span class="brand-mark">M<span>↗</span></span><span>三维机械实验室<small>MECHANICAL OBSERVATORY</small></span></a><div class="header-right"><i></i>制冷机械 / 交互展示<span>VOL. 01</span></div></header>
+<main class="workspace">
+<aside class="sidebar">
+ <div class="eyebrow">01 / REFRIGERATION ──</div>
+ <h1>活塞式<br>制冷压缩机<span>.</span></h1>
+ <p class="intro">从机械结构到气体流动，<br>观察一个完整的压缩循环。</p>
+ <div class="section-heading"><h2>工作进程</h2><span>选择阶段，查看内部运动</span></div>
+ <div class="phases" aria-label="选择工作过程">
+  <button type="button" class="phase" data-c3-phase="0" aria-pressed="false"><span class="phase-number">01</span><span>再膨胀<small>RE-EXPANSION</small></span><span class="phase-arrow">↗</span></button>
+  <button type="button" class="phase" data-c3-phase="1" aria-pressed="true"><span class="phase-number">02</span><span>吸气<small>SUCTION</small></span><span class="phase-arrow">↗</span></button>
+  <button type="button" class="phase" data-c3-phase="2" aria-pressed="false"><span class="phase-number">03</span><span>压缩<small>COMPRESSION</small></span><span class="phase-arrow">↗</span></button>
+  <button type="button" class="phase" data-c3-phase="3" aria-pressed="false"><span class="phase-number">04</span><span>排气<small>DISCHARGE</small></span><span class="phase-arrow">↗</span></button>
+ </div>
+ <p class="detail" id="c3-detail" aria-live="polite">吸气：吸气阀开启，活塞下行，低压蒸气进入气缸。</p>
+ <button type="button" class="play" id="c3-play" aria-pressed="false">播放运转</button>
+ <div class="metrics"><span id="c3-in">吸气阀：开启</span><span id="c3-out">排气阀：关闭</span><span id="c3-p">相对缸压：1.00</span></div>
+</aside>
+<section class="viewer" aria-label="压缩机三维展示">
+ <div class="viewer-toolbar"><div><span class="eyebrow">MODEL / PC–01</span><p id="view-state">完整外观</p></div><div class="viewer-options"><label class="switch"><input type="checkbox" id="c3-cut"><span class="switch-track" aria-hidden="true"></span><span>剖切观察</span></label><label class="sr-only" for="c3-view">观察视角</label><select id="c3-view"><option value="oblique">立体视角</option><option value="front">正面视角</option><option value="side">侧面视角</option><option value="rear">背面视角</option></select><button class="icon-button" id="fullscreen" type="button" aria-label="全屏查看">⛶</button></div></div>
+ <div class="stage" aria-label="可旋转缩放的三维压缩机"><div class="load" role="status"><span class="loader"></span>正在构建三维场景…</div></div>
+ <div class="stage-caption"><span>↔ 拖动旋转 <span class="caption-divider">/</span> 滚轮、双指缩放</span><button type="button" id="home-view" class="text-button">恢复视角 ↗</button></div>
+ <div class="viewer-bottom"><div class="part"><span class="eyebrow">COMPONENT</span><p id="c3-part" aria-live="polite">点击三维部件，查看名称</p></div><div class="legend"><span><i class="swatch low"></i>低压蒸气</span><span><i class="swatch high"></i>高压蒸气</span></div></div>
+ <div class="scrub"><label for="c3-angle"><span>曲轴角度 <span class="scrub-hint">/ 拖动逐帧观察</span></span><output id="c3-degrees">100°</output></label><input type="range" id="c3-angle" min="0" max="360" step="0.1" value="100" aria-label="曲轴角度"><div class="angle-labels"><span>0° 上止点</span><span>180° 下止点</span><span>360° 上止点</span></div></div>
+</section></main>
+<section class="principle" aria-label="模型说明"><div><span class="eyebrow">BEHIND THE MOTION</span><h2>旋转，变成往复。</h2></div><p>曲轴通过连杆带动活塞往复运动，改变气缸内的容积与压力。吸气阀和排气阀随压差启闭，使制冷剂蒸气完成吸入、压缩与排出。</p><div class="assumptions"><span>压力比 <b>4</b></span><span>余隙比 <b>7%</b></span><span>多变指数 <b>1.2</b></span></div></section>
+<footer><span>MECHANICAL OBSERVATORY © 2026</span><p>通用结构教学模型，非特定厂牌尺寸复刻。忽略阀门压降、泄漏与惯性；阀片升程和气流已放大，参数非实测数据。</p></footer>
+</body></html>
