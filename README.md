@@ -2,6 +2,8 @@
 
 独立的三维互动网站，展示压缩机完整外观及剖切运转过程。支持旋转、缩放、全屏、部件名称点选，以及再膨胀、吸气、压缩、排气四个过程。
 
+在线访问：[打开三维压缩机网站](https://02170902.github.io/piston-compressor-3d/)
+
 ## GitHub Pages
 
 将本目录文件上传到仓库的 `main` 分支后，在 **Settings → Pages** 中选择 **Deploy from a branch → main → /(root)** 并保存。根目录包含 `.nojekyll`，使用静态文件直接发布。
